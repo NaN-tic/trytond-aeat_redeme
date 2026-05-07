@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!-- The COPYRIGHT file at the top level of this repository contains the full
+     copyright notices and license terms. -->
+<tryton>
+    <data depends="account_es">
+        <!-- [77] - Cuotas devengadas importaciones bienes corrientes 4% -->
+        <record model="aeat.303.mapping-account.tax.code.template" id="aeat_303_mapping_code_77_val1">
+            <field name="mapping" ref="aeat_303_mapping_code_77" />
+            <field name="code" ref="account_es.iva_ded_27_4" />
+        </record>
+        <!-- [77] - Cuotas devengadas importaciones bienes corrientes 10% -->
+        <record model="aeat.303.mapping-account.tax.code.template" id="aeat_303_mapping_code_77_val2">
+            <field name="mapping" ref="aeat_303_mapping_code_77" />
+            <field name="code" ref="account_es.iva_ded_27_10" />
+        </record>
+        <!-- [77] - Cuotas devengadas importaciones bienes corrientes 21% -->
+        <record model="aeat.303.mapping-account.tax.code.template" id="aeat_303_mapping_code_77_val3">
+            <field name="mapping" ref="aeat_303_mapping_code_77" />
+            <field name="code" ref="account_es.iva_ded_27_21" />
+        </record>
+    </data>
+</tryton>

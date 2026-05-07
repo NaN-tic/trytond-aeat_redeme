@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!-- The COPYRIGHT file at the top level of this repository contains the full
+     copyright notices and license terms. -->
+<tryton>
+    <data>
+        <record model="ir.ui.view" id="aeat_303_report_form_view">
+            <field name="model">aeat.303.report</field>
+            <field name="inherit" ref="aeat_303.aeat_303_report_form_view"/>
+            <field name="name">aeat_303_report_form</field>
+        </record>
+    </data>
+</tryton>

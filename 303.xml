@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!-- The COPYRIGHT file at the top level of this repository contains the full
+     copyright notices and license terms. -->
+<tryton>
+    <data>
+        <record model="aeat.303.template.mapping" id="aeat_303_mapping_code_77">
+            <field name="type_">code</field>
+            <field name="aeat303_field"
+                search="[('name', '=','aduana_tax_pending'), ('module', '=', 'aeat_303')]"/>
+        </record>
+    </data>
+</tryton>

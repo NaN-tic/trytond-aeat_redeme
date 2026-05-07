@@ -1,0 +1,11 @@
+#
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "field:company.company,redeme:"
+msgid "REDEME"
+msgstr "REDEME"
+
+msgctxt "field:aeat.303.report,company_redeme:"
+msgid "REDEME"
+msgstr "REDEME"
