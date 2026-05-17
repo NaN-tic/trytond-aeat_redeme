@@ -3,6 +3,7 @@ import unittest
 from decimal import Decimal
 
 from proteus import Model, Wizard
+from trytond.exceptions import UserWarning
 from trytond.modules.account.tests.tools import create_fiscalyear
 from trytond.modules.account_invoice.tests.tools import (
     create_payment_term, set_fiscalyear_invoice_sequences)
@@ -25,7 +26,12 @@ class Test(unittest.TestCase):
     def test(self):
         today = datetime.date.today()
 
-        activate_modules(['aeat_redeme', 'account_es', 'account_invoice'])
+        test_config = activate_modules(
+            ['aeat_redeme', 'account_es', 'account_invoice'])
+        Module = Model.get('ir.module')
+        aeat_redeme_module, = Module.find([('name', '=', 'aeat_redeme')])
+        Module.click([aeat_redeme_module], 'upgrade')
+        Wizard('ir.module.activate_upgrade').execute('upgrade')
 
         eur = get_currency('EUR')
         _ = create_company(currency=eur)
@@ -105,6 +111,13 @@ class Test(unittest.TestCase):
         self.assertEqual(len(invoice.taxes), 1)
         self.assertEqual(invoice_tax.amount, Decimal('21.00'))
 
+        with self.assertRaises(UserWarning):
+            invoice.click('post')
+
+        Warning = Model.get('res.user.warning')
+        Warning(user=test_config.user,
+            name='aeat_redeme_account_change_%s' % invoice.id,
+            always=True).save()
         invoice.click('post')
 
         self.assertEqual(invoice.account.id, payable.id)
