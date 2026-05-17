@@ -5,10 +5,15 @@ from trytond.pool import Pool
 
 from . import aeat
 from . import company
+from . import configuration
+from . import invoice
 
 
 def register():
     Pool.register(
+        configuration.Configuration,
+        configuration.ConfigurationAEAT303,
         company.Company,
         aeat.Report,
+        invoice.Invoice,
         module='aeat_redeme', type_='model')
