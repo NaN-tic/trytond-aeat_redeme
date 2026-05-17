@@ -18,5 +18,20 @@
             <field name="mapping" ref="aeat_303_mapping_code_77" />
             <field name="code" ref="account_es.iva_ded_27_21" />
         </record>
+        <!-- [77] - Cuotas devengadas importaciones bienes inversión 4% -->
+        <record model="aeat.303.mapping-account.tax.code.template" id="aeat_303_mapping_code_77_val4">
+            <field name="mapping" ref="aeat_303_mapping_code_77" />
+            <field name="code" ref="account_es.iva_ded_29_4" />
+        </record>
+        <!-- [77] - Cuotas devengadas importaciones bienes inversión 10% -->
+        <record model="aeat.303.mapping-account.tax.code.template" id="aeat_303_mapping_code_77_val5">
+            <field name="mapping" ref="aeat_303_mapping_code_77" />
+            <field name="code" ref="account_es.iva_ded_29_10" />
+        </record>
+        <!-- [77] - Cuotas devengadas importaciones bienes inversión 21% -->
+        <record model="aeat.303.mapping-account.tax.code.template" id="aeat_303_mapping_code_77_val6">
+            <field name="mapping" ref="aeat_303_mapping_code_77" />
+            <field name="code" ref="account_es.iva_ded_29_21" />
+        </record>
     </data>
 </tryton>
