@@ -137,7 +137,7 @@ class Test(unittest.TestCase):
         payment_term.save()
 
         Invoice = Model.get('account.invoice')
-        invoice = Invoice()
+        invoice = Invoice(type='out')
         invoice.party = party
         invoice.payment_term = payment_term
         line = invoice.lines.new()
